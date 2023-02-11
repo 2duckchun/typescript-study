@@ -5,6 +5,8 @@ square("문자") // argument가 숫자형이 아니라 오류 발생.
 square(false) // argument가 숫자형이 아니라 오류 발생.
 square(3)
 
+///
+
 function greet(person: string) {
   // person * person
   return `Hi! ${person.toUpperCase()}` 
@@ -33,11 +35,15 @@ Add the type annotation after the function parameter list.
 
 const addNums = (x: number, y:number):number => {
   return x + y
-}
+} // 숫자형 반환
 
-function addNumsToo(x:number, y:number = 2):number {
+const addNumsTwo = (x: number, y:number):number => {
+  return (x + y).toString()
+} // 리턴 타입이 숫자형임에도 불구하고 문자형 반환이라 오류 발생
+
+function addNumsThree(x:number, y:number = 2):number {
   return x + y
-}
+} // 숫자형 반환 (+ 파라미터에 고정값 추가 해보았음)
 
 
 function voidSquare(x:number, y:number) {
@@ -55,6 +61,7 @@ function rando(num:number) {
   if (Math.random() < 0.5) return num.toString()
   return num
 }
+
 rando(6)
 
 
@@ -64,18 +71,22 @@ When Typescript can infer how an unnamed function is going to be called,
 it can automatically infer its parameters' types.
 */
 
-const numbers = [1, 2, 3]
-
 // Contextual typing on an arrow function
+const numbers = [1, 2, 3]
 numbers.forEach(num => {
   return num.toUpperCase() // Error!
   // .toUpperCase() doesn't work for nums
 })
 
 const mixed = [1, "2", 3, true, (num:number ) => {return num}]
+
+
 mixed.map(thing => {
   return thing
 })
+
+
+
 
 // Void
 /*
@@ -100,6 +111,8 @@ const justPrint = (msg: string):void => {
   console.log(msg)
   // return ""
 }
+
+
 justPrint('ㅎㅇ')
 
 // Never
@@ -119,9 +132,13 @@ const neverStop = (): never => {
     console.log("i'm still going")
   }
 }
+
+
 neverStop()
 
 const giveError = (msg: string) => {
   throw new Error(msg)
 }
+
+
 giveError('에러네욤')
