@@ -47,7 +47,7 @@ function unionTax(price: number | string, tax: number) {
 const anyany: any[] = [1, 2, false, true, "짱"]
 const num: number[] = [1, 2, 3, 4]
 const numstring: (number | string)[] = [1, 2, 3, "4"]
-// const numstring: number[] | string[] = [??]
+// const numstring2: number[] | string[] = []
 
 const coordis: (UnionPoint | UnionLoc)[] = []
 coordis.push({lat: 5, long: 6})
