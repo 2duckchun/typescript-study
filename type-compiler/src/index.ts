@@ -23,7 +23,6 @@ const juniper: Chicken = {
 
 // tsc --watch ddd.ts
 // tsc -w ddd.ts
-
 // tsc
 // tsc -w
 
@@ -48,5 +47,4 @@ checkJs -> Typescript가 오류 보고하게 하는 것
 sourceMap -> TypeScript 소스맵 생성 여부 지시 가능
 noEmit -> 컴파일해도 JS 안생김
 noEmitOnError -> 타입 검사에 문제 있으면 JS로 컴파일 안함.
-
 */
