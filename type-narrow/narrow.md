@@ -262,7 +262,8 @@ function getFarmAnimalSound(animal:FarmAnimal) {
     default:
       console.log("무언가 잘못되었네용ㅎ")
       // 모든 케이스가 올바르게 처리되면 여기까지 진행되지 않을 것임.
-      const shouldNeverGetHere: never = animal // Sheep에 대한 case가 없어서 에러를 뿜게됨.
+      const _exhaustiveCheck: never = animal // Sheep에 대한 case가 없어서 에러를 뿜게됨.
+      return _exhaustiveCheck
   }
 }
 ```
